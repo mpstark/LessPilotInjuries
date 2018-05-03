@@ -26,7 +26,7 @@ namespace LessPilotInjuries
     [HarmonyPatch(typeof(BattleTech.Mech), "DamageLocation")]
     public static class BattleTech_Mech_DamageLocation_Patch
     {
-        static void Postfix(Mech __instance, int originalHitLoc, WeaponHitInfo hitInfo, ArmorLocation aLoc, Weapon weapon, float totalDamage, int hitIndex, AttackImpactQuality impactQuality)
+        static void Prefix(Mech __instance, int originalHitLoc, WeaponHitInfo hitInfo, ArmorLocation aLoc, Weapon weapon, float totalDamage, int hitIndex, AttackImpactQuality impactQuality)
         {
             if (aLoc == ArmorLocation.Head && totalDamage < LessPilotInjuries.HeadHitIgnoreDamageBelow)
             {
@@ -38,7 +38,7 @@ namespace LessPilotInjuries
     [HarmonyPatch(typeof(BattleTech.GameInstance), "LaunchContract", new Type[] { typeof(Contract), typeof(string) })]
     public static class BattleTech_GameInstance_LaunchContract_Patch
     {
-        static void Postfix()
+        static void Prefix()
         {
             // reset on new contracts
             LessPilotInjuries.Reset();
