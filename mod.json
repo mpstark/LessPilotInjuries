@@ -1,0 +1,7 @@
+{
+    "Name": "LessPilotInjuries",
+    "DLL": "LessPilotInjuries.dll",
+    "Settings": {
+        "IgnoreDamageBelow": 10
+    }
+}
