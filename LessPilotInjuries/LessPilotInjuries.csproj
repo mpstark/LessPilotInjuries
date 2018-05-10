@@ -22,29 +22,55 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
+    <ItemGroup>
+        <Reference Include="mscorlib">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\mscorlib.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="0Harmony">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\0Harmony.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\Assembly-CSharp.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="BattleTechModLoader">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\BattleTechModLoader.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\Newtonsoft.Json.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="System">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\System.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="System.Core">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\System.Core.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="System.Data">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\System.Data.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="System.Xml">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\System.Xml.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>$(BattleTechGame)\BattleTech_Data\Managed\UnityEngine.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
   <ItemGroup>
     <Compile Include="LessPilotInjuries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +79,7 @@
     <None Include="mod.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
